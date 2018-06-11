@@ -6,7 +6,7 @@ CREATE TABLE users(
 	username varchar(50) NOT NULL,
 	password varchar (50) NOT NULL,
 	email varchar(100) NOT NULL,
-	PRUMARY KEY (id)
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE students(
@@ -29,6 +29,8 @@ CREATE TABLE students_monitors(
 	status enum('Realizado','Aluno Faltou','Cancelado','Pendente') not null,
 	feedback textarea not null,
 	primary key(id)
+	foreign key (student_id) references students(id)
+	foreign key (monitor_id) references monitors (id)
 );
 
 
