@@ -28,8 +28,8 @@ CREATE TABLE students_monitors(
 	date_time_fin datetime not null,
 	status enum('Realizado','Aluno Faltou','Cancelado','Pendente') not null,
 	feedback textarea not null,
-	primary key(id)
-	foreign key (student_id) references students(id)
+	primary key(id),
+	foreign key (student_id) references students(id),
 	foreign key (monitor_id) references monitors (id)
 );
 
