@@ -28,7 +28,7 @@
         <?php if (!empty($student->monitors)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
+              <!--   <th scope="col"><?= __('Id') ?></th> -->
                 <th scope="col"><?= __('Name') ?></th>
                 <th scope="col"><?= __('Discipline') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
