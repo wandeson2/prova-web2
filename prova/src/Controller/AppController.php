@@ -48,7 +48,7 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
         'authorize' => ['Controller'],
         'loginRedirect' => [
-        'controller' => 'students',
+        'controller' => 'Students',
         'action' => 'index'
         ],
         'logoutRedirect' => [
@@ -57,10 +57,10 @@ class AppController extends Controller
         'home'
         ]
         ]);
-}
+    }
         public function beforeFilter(Event $event)
         {
-        $this->Auth->allow(['index','display']);
+            $this->Auth->allow(['index','display']);
         }
 
         /*
@@ -72,12 +72,12 @@ class AppController extends Controller
     public function isAuthorized($user)
         {
         // Admin can access every action
-            if (isset($user['role']) && $user['role'] === 'admin') {
+            // if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
             }
         
             // Default deny
-            return false;
-        }
+            // return false;
+        // }
 
 }

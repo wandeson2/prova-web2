@@ -2,7 +2,7 @@ CREATE TABLE users(
 	id int UNSIGNED auto_increment ,
 	name varchar(30) NOT NULL,
 	username varchar(50) NOT NULL,
-	password varchar (50) NOT NULL,
+	password varchar (500) NOT NULL,
 	email varchar(100) NOT NULL,
 	role VARCHAR(20) NOT NULL,
 	created DATETIME DEFAULT NULL,
@@ -24,8 +24,8 @@ CREATE TABLE monitors(
 
 CREATE TABLE students_monitors(
 	id int UNSIGNED auto_increment ,
-	student_id int UNSIGNED auto_increment ,
-	monitor_id int UNSIGNED auto_increment ,
+	student_id int UNSIGNED ,
+	monitor_id int UNSIGNED ,
 	date_time_start datetime not null,
 	date_time_fin datetime not null,
 	status enum('Realizado','Aluno Faltou','Cancelado','Pendente') not null,
