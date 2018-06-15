@@ -2,8 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Mailer\Email;
 use Cake\Event\Event;
+
 
 /**
  * StudentsMonitors Controller
@@ -58,14 +58,8 @@ class StudentsMonitorsController extends AppController
             $studentsMonitor = $this->StudentsMonitors->patchEntity($studentsMonitor, $this->request->getData());
             if ($this->StudentsMonitors->save($studentsMonitor)) {
                 $this->Flash->success(__('The students monitor has been saved.'));
-                $email = new Email('default');
-                $email->from(['testezerozerosete@gmail.com' => 'Prova'])
-                    ->to($StudentsMonitors['email'])
-                    ->subject('teste')
-                    ->send('BEM VINDO USUARIO AGENDAMENTO REALIZADO');
-                  return $this->redirect(['action' => 'index']);
 
-                
+                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The students monitor could not be saved. Please, try again.'));
         }
@@ -118,5 +112,10 @@ class StudentsMonitorsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['add', 'logout']);
     }
 }

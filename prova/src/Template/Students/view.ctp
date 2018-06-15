@@ -19,6 +19,10 @@
     <h3><?= h($student->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($student->name) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($student->id) ?></td>
         </tr>
@@ -28,7 +32,7 @@
         <?php if (!empty($student->monitors)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-              <!--   <th scope="col"><?= __('Id') ?></th> -->
+                <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
                 <th scope="col"><?= __('Discipline') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>

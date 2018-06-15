@@ -20,6 +20,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\StudentsMonitor patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\StudentsMonitor[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\StudentsMonitor findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class StudentsMonitorsTable extends Table
 {
@@ -38,13 +40,13 @@ class StudentsMonitorsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->addBehavior('Timestamp');
+
         $this->belongsTo('Students', [
-            'foreignKey' => 'student_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'student_id'
         ]);
         $this->belongsTo('Monitors', [
-            'foreignKey' => 'monitor_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'monitor_id'
         ]);
     }
 
@@ -71,15 +73,14 @@ class StudentsMonitorsTable extends Table
             ->notEmpty('date_time_fin');
 
         $validator
-            ->scalar('status')
-            ->requirePresence('status', 'create')
-            ->notEmpty('status');
+            ->scalar('role')
+            ->maxLength('role', 20)
+            ->requirePresence('role', 'create')
+            ->notEmpty('role')
+            ->add('role', 'inList', [
+            'rule' => ['inList', ['Realizado','AlunoFaltou','Cancelado','Pendente']],
+            'message' => 'Por favor entre com um papel válido!']);
 
-        $validator
-            ->scalar('feedback')
-            ->maxLength('feedback', 255)
-            ->requirePresence('feedback', 'create')
-            ->notEmpty('feedback');
 
         return $validator;
     }

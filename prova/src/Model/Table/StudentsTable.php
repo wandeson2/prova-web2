@@ -56,6 +56,12 @@ class StudentsTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
+        $validator
+            ->scalar('name')
+            ->maxLength('name', 40)
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
+
         return $validator;
     }
 }

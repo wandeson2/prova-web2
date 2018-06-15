@@ -60,7 +60,7 @@ class AppController extends Controller
     }
         public function beforeFilter(Event $event)
         {
-            $this->Auth->allow(['index','display']);
+            $this->Auth->allow(['view','display']);
         }
 
         /*
@@ -72,12 +72,12 @@ class AppController extends Controller
     public function isAuthorized($user)
         {
         // Admin can access every action
-            // if (isset($user['role']) && $user['role'] === 'admin') {
+            if (isset($user['role']) && $user['role'] === 'monitors') {
             return true;
             }
         
             // Default deny
-            // return false;
-        // }
+            return false;
+        }
 
 }

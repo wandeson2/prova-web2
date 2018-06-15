@@ -11,8 +11,9 @@ use Cake\ORM\Entity;
  * @property int $monitor_id
  * @property \Cake\I18n\FrozenTime $date_time_start
  * @property \Cake\I18n\FrozenTime $date_time_fin
- * @property string $status
- * @property string $feedback
+ * @property string $role
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \App\Model\Entity\Student $student
  * @property \App\Model\Entity\Monitor $monitor
@@ -34,8 +35,9 @@ class StudentsMonitor extends Entity
         'monitor_id' => true,
         'date_time_start' => true,
         'date_time_fin' => true,
-        'status' => true,
-        'feedback' => true,
+        'role' => true,
+        'created' => true,
+        'modified' => true,
         'student' => true,
         'monitor' => true
     ];

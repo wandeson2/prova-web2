@@ -18,12 +18,13 @@ class StudentsMonitorsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'student_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'monitor_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'student_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'monitor_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'date_time_start' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'date_time_fin' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'status' => ['type' => 'string', 'length' => null, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'feedback' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'role' => ['type' => 'string', 'length' => 20, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
+        'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
             'student_id' => ['type' => 'index', 'columns' => ['student_id'], 'length' => []],
             'monitor_id' => ['type' => 'index', 'columns' => ['monitor_id'], 'length' => []],
@@ -52,10 +53,11 @@ class StudentsMonitorsFixture extends TestFixture
                 'id' => 1,
                 'student_id' => 1,
                 'monitor_id' => 1,
-                'date_time_start' => '2018-06-13 18:51:47',
-                'date_time_fin' => '2018-06-13 18:51:47',
-                'status' => 'Lorem ipsum dolor sit amet',
-                'feedback' => 'Lorem ipsum dolor sit amet'
+                'date_time_start' => '2018-06-14 16:53:56',
+                'date_time_fin' => '2018-06-14 16:53:56',
+                'role' => 'Lorem ipsum dolor ',
+                'created' => '2018-06-14 16:53:56',
+                'modified' => '2018-06-14 16:53:56'
             ],
         ];
         parent::init();

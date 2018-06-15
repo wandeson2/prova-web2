@@ -3,6 +3,8 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\StudentsMonitor $studentsMonitor
  */
+$loguser = $this->request->getSession()->read("Auth.User");
+
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -19,13 +21,12 @@
     <fieldset>
         <legend><?= __('Add Students Monitor') ?></legend>
         <?php
-            echo $this->Form->control('student_id', ['options' => $students]);
-            echo $this->Form->control('monitor_id', ['options' => $monitors]);
+            echo $this->Form->control('student_id', ['options' => $loguser['name'], 'empty' => true]);
+            echo $this->Form->control('monitor_id', ['options' => $monitors, 'empty' => true]);
             echo $this->Form->control('date_time_start');
             echo $this->Form->control('date_time_fin');
-            echo $this->Form->control('status');
-            echo $this->Form->control('feedback');
-        ?>
+            echo $this->Form->control('role',  ['label'=>'Status',
+            'options' => ['Realizado' => 'Realizado', 'Aluno faltou' => 'Ausente', 'Cancelado'=> 'Cancelado', 'Pendente'=>'Pendente'] ]);               ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

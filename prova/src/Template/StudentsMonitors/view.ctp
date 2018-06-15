@@ -22,19 +22,15 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Student') ?></th>
-            <td><?= $studentsMonitor->has('student') ? $this->Html->link($studentsMonitor->student->id, ['controller' => 'Students', 'action' => 'view', $studentsMonitor->student->id]) : '' ?></td>
+            <td><?= $studentsMonitor->has('student') ? $this->Html->link($studentsMonitor->student->name, ['controller' => 'Students', 'action' => 'view', $studentsMonitor->student->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Monitor') ?></th>
             <td><?= $studentsMonitor->has('monitor') ? $this->Html->link($studentsMonitor->monitor->name, ['controller' => 'Monitors', 'action' => 'view', $studentsMonitor->monitor->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Status') ?></th>
-            <td><?= h($studentsMonitor->status) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Feedback') ?></th>
-            <td><?= h($studentsMonitor->feedback) ?></td>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= h($studentsMonitor->role) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -47,6 +43,14 @@
         <tr>
             <th scope="row"><?= __('Date Time Fin') ?></th>
             <td><?= h($studentsMonitor->date_time_fin) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Created') ?></th>
+            <td><?= h($studentsMonitor->created) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Modified') ?></th>
+            <td><?= h($studentsMonitor->modified) ?></td>
         </tr>
     </table>
 </div>

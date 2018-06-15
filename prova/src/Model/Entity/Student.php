@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
  * Student Entity
  *
  * @property int $id
+ * @property string $name
  *
  * @property \App\Model\Entity\Monitor[] $monitors
  */
@@ -23,6 +24,7 @@ class Student extends Entity
      * @var array
      */
     protected $_accessible = [
+        'name' => true,
         'monitors' => true
     ];
 }

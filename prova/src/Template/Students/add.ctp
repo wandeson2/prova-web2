@@ -17,6 +17,7 @@
     <fieldset>
         <legend><?= __('Add Student') ?></legend>
         <?php
+            echo $this->Form->control('name');
             echo $this->Form->control('monitors._ids', ['options' => $monitors]);
         ?>
     </fieldset>
