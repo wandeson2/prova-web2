@@ -19,7 +19,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-              
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('student_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('monitor_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_time_start') ?></th>
@@ -33,7 +33,7 @@
         <tbody>
             <?php foreach ($studentsMonitors as $studentsMonitor): ?>
             <tr>
-               
+                <td><?= $this->Number->format($studentsMonitor->id) ?></td>
                 <td><?= $studentsMonitor->has('student') ? $this->Html->link($studentsMonitor->student->name, ['controller' => 'Students', 'action' => 'view', $studentsMonitor->student->id]) : '' ?></td>
                 <td><?= $studentsMonitor->has('monitor') ? $this->Html->link($studentsMonitor->monitor->name, ['controller' => 'Monitors', 'action' => 'view', $studentsMonitor->monitor->id]) : '' ?></td>
                 <td><?= h($studentsMonitor->date_time_start) ?></td>

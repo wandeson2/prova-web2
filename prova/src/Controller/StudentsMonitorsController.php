@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
-use Cake\Event\Email;
 
 
 /**
@@ -59,8 +58,6 @@ class StudentsMonitorsController extends AppController
             $studentsMonitor = $this->StudentsMonitors->patchEntity($studentsMonitor, $this->request->getData());
             if ($this->StudentsMonitors->save($studentsMonitor)) {
                 $this->Flash->success(__('The students monitor has been saved.'));
-                
-                 
 
                 return $this->redirect(['action' => 'index']);
             }

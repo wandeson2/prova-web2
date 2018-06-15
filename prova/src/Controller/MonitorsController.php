@@ -53,7 +53,6 @@ class MonitorsController extends AppController
             $monitor = $this->Monitors->patchEntity($monitor, $this->request->getData());
             if ($this->Monitors->save($monitor)) {
                 $this->Flash->success(__('The monitor has been saved.'));
-                
 
                 return $this->redirect(['action' => 'index']);
             }
