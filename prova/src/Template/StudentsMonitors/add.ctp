@@ -21,7 +21,7 @@ $loguser = $this->request->getSession()->read("Auth.User");
     <fieldset>
         <legend><?= __('Add Students Monitor') ?></legend>
         <?php
-            echo $this->Form->control('student_id', ['options' => $loguser['name'], 'empty' => true]);
+            echo $this->Form->control('student_id', ['options' => $loguser, 'empty' => true]);
             echo $this->Form->control('monitor_id', ['options' => $monitors, 'empty' => true]);
             echo $this->Form->control('date_time_start');
             echo $this->Form->control('date_time_fin');

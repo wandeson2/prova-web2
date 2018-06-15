@@ -17,16 +17,16 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('discipline') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('disciplinas') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($monitors as $monitor): ?>
             <tr>
-                <td><?= $this->Number->format($monitor->id) ?></td>
+                
                 <td><?= h($monitor->name) ?></td>
                 <td><?= h($monitor->discipline) ?></td>
                 <td class="actions">

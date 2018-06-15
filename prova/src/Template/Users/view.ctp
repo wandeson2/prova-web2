@@ -24,10 +24,10 @@
             <th scope="row"><?= __('Username') ?></th>
             <td><?= h($user->username) ?></td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th scope="row"><?= __('Password') ?></th>
             <td><?= h($user->password) ?></td>
-        </tr>
+        </tr> -->
         <tr>
             <th scope="row"><?= __('Email') ?></th>
             <td><?= h($user->email) ?></td>
@@ -37,8 +37,8 @@
             <td><?= h($user->role) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
+           <!--  <th scope="row"><?= __('Id') ?></th> -->
+            <!-- <td><?= $this->Number->format($user->id) ?></td> -->
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>

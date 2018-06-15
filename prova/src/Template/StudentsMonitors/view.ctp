@@ -33,8 +33,8 @@
             <td><?= h($studentsMonitor->role) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($studentsMonitor->id) ?></td>
+           <!--  <th scope="row"><?= __('Id') ?></th> -->
+            <!-- <td><?= $this->Number->format($studentsMonitor->id) ?></td> -->
         </tr>
         <tr>
             <th scope="row"><?= __('Date Time Start') ?></th>
